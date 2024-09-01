@@ -1,14 +1,18 @@
 package main
 
-const GREETING = "Hello, "
+const ENGLISH_GREETING = "Hello, "
+const SPANISH_GREETING = "Hola, "
 
-func Hello(name string) string {
+func Hello(name string, language string) string {
 	if name == "" {
 		name = "World!"
 	}
-	return GREETING + name
+	if language == "Spanish" {
+		return SPANISH_GREETING + name
+	}
+	return ENGLISH_GREETING + name
 }
 
 func main() {
-	println(Hello("Corey"))
+	println(Hello("Corey", "Spanish"))
 }
